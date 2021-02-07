@@ -1,9 +1,11 @@
 
 import './App.css';
+import Weather from "./Weather";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
+    <Weather/>
       <p>This app was coded by <a href="https://github.com/AngelicaVilela" rel="noreferrer" target="_blank">Angélica Vilela</a></p>
     </div>
   );
