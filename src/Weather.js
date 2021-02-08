@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
-import WeatherInfo from "./WeatherInfo";
+import FormattedDate from "./FormattedDate.js";
+import WeatherInfo from "./WeatherInfo.js";
 
 export default function Weather(props){
     const[city, setCity] = useState(props.defaultCity);
@@ -20,7 +20,7 @@ export default function Weather(props){
             date:new Date(response.data.dt * 1000),
 
         })
-    }
+    } 
     function search(){
     const apiKey= "5d86e59e72e3a8a557375a5c5452a236";
     let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -39,7 +39,7 @@ export default function Weather(props){
     if(weatherData.ready){
     return (<div className="Weather">
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Enter City Name" autocomplete="off" autofocus="on"
+            <input type="text" placeholder="Enter City Name" autoComplete="off" autoFocus="on"
             onChange={handleCityChange}/>
             <input type="submit" value="Search" />
         </form>
