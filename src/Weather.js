@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate.js";
 import WeatherInfo from "./WeatherInfo.js";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props){
     const[city, setCity] = useState(props.defaultCity);
@@ -45,6 +46,7 @@ export default function Weather(props){
         </form>
         <WeatherInfo data={weatherData}/>
        <FormattedDate date={weatherData.date}/>
+        <WeatherForecast city={weatherData.city}/>
         </div>) 
 } else { 
     search()
